@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Dashboard" class="bg-green-600 text-white">
+        <NavigationButton visibility="collapsed" />
+        <ActionItem ios.position="right" android.position="actionBar" tap="{{ onLogout }}">
+            <Label text="Logout" class="text-white p-2" />
+        </ActionItem>
+    </ActionBar>
+    
+    <GridLayout rows="auto, *" class="p-4">
+        <Label text="Welcome to RicePay" class="text-xl font-bold text-center p-4" />
+        <StackLayout row="1" class="space-y-4">
+            <Button text="Send Payment" tap="{{ onSendPayment }}" class="-primary p-4 rounded-lg" />
+            <Button text="Request Loan" tap="{{ onRequestLoan }}" class="-primary p-4 rounded-lg" />
+            <Button text="Manage Collateral" tap="{{ onManageCollateral }}" class="-primary p-4 rounded-lg" />
+            <Button text="View Transactions" tap="{{ viewTransactions }}" class="-primary p-4 rounded-lg" />
+        </StackLayout>
+    </GridLayout>
+</Page>

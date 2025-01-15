@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Transactions" class="bg-green-600 text-white">
+        <NavigationButton text="Back" />
+    </ActionBar>
+    
+    <GridLayout rows="auto, *">
+        <StackLayout row="0" class="p-4 bg-white border-b border-gray-200">
+            <Label text="Transaction History" class="text-lg font-bold" />
+        </StackLayout>
+        
+        <ListView row="1" items="{{ transactions }}" class="list-group">
+            <ListView.itemTemplate>
+                <GridLayout columns="*, auto" class="p-4 border-b border-gray-200">
+                    <StackLayout col="0">
+                        <Label text="{{ type }}" class="font-bold" />
+                        <Label text="{{ description }}" class="text-gray-600" />
+                        <Label text="{{ createdAt, 'dd MMM yyyy' }}" class="text-sm text-gray-500" />
+                    </StackLayout>
+                    <StackLayout col="1" verticalAlignment="center">
+                        <Label text="{{ amount }}" class="{{ amount >= 0 ? 'text-green-600' : 'text-red-600' }} font-bold" />
+                        <Label text="{{ status }}" class="text-sm" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>

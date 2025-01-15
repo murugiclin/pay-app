@@ -1,0 +1,20 @@
+{
+  "name": "project-bolt-sb1-wpqrzael",
+  "version": "1.0.0",
+  "description": "my app",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-native start",
+    "dev": "react-native run-android",
+    "build": "react-native run-android --variant=release",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "clin",
+  "license": "ISC",
+  "dependencies": {
+    "react-native": "^0.76.6"
+  },
+  "devDependencies": {
+    "@react-native-community/cli": "^15.1.3"
+  }
+}

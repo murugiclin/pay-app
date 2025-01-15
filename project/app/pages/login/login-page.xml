@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="RicePay Login" class="bg-green-600 text-white" />
+    
+    <GridLayout rows="*, auto, auto">
+        <StackLayout row="1" class="p-6 space-y-4">
+            <Label text="Welcome to RicePay" class="text-2xl font-bold text-center text-green-600" />
+            
+            <StackLayout class="form space-y-3">
+                <TextField 
+                    hint="Email" 
+                    text="{{ email }}" 
+                    keyboardType="email" 
+                    autocorrect="false" 
+                    autocapitalizationType="none"
+                    class="input p-4 bg-white rounded-lg border-2 border-gray-200" />
+                    
+                <TextField 
+                    hint="Password" 
+                    text="{{ password }}" 
+                    secure="true" 
+                    returnKeyType="done"
+                    class="input p-4 bg-white rounded-lg border-2 border-gray-200" />
+                    
+                <Button 
+                    text="{{ isLoading ? 'Logging in...' : 'Login' }}" 
+                    tap="{{ onLoginTap }}"
+                    isEnabled="{{ !isLoading }}"
+                    class="btn bg-green-600 text-white font-bold p-4 rounded-lg" />
+                    
+                <Button 
+                    text="Create Account" 
+                    tap="{{ onRegisterTap }}" 
+                    class="btn -outline font-bold p-4" />
+            </StackLayout>
+        </StackLayout>
+        
+        <ActivityIndicator 
+            busy="{{ isLoading }}" 
+            row="1"
+            horizontalAlignment="center"
+            verticalAlignment="center" />
+    </GridLayout>
+</Page>

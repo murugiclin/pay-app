@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Send Payment" class="bg-green-600 text-white">
+        <NavigationButton text="Back" />
+    </ActionBar>
+    
+    <StackLayout class="p-6 space-y-4">
+        <TextField 
+            hint="Recipient Email" 
+            text="{{ recipientEmail }}" 
+            keyboardType="email"
+            class="input p-4 bg-white rounded-lg border-2 border-gray-200" />
+            
+        <TextField 
+            hint="Amount" 
+            text="{{ amount }}" 
+            keyboardType="number"
+            class="input p-4 bg-white rounded-lg border-2 border-gray-200" />
+            
+        <TextField 
+            hint="Description" 
+            text="{{ description }}" 
+            class="input p-4 bg-white rounded-lg border-2 border-gray-200" />
+            
+        <Button 
+            text="{{ isLoading ? 'Sending...' : 'Send Payment' }}" 
+            tap="{{ onSendPayment }}"
+            isEnabled="{{ !isLoading }}"
+            class="-primary p-4 rounded-lg" />
+    </StackLayout>
+</Page>
