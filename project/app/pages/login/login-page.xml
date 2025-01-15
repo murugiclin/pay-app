@@ -35,10 +35,5 @@
             </StackLayout>
         </StackLayout>
         
-        <ActivityIndicator 
-            busy="{{ isLoading }}" 
-            row="1"
-            horizontalAlignment="center"
-            verticalAlignment="center" />
     </GridLayout>
 </Page>
